@@ -1,12 +1,16 @@
 name: CI - Order Service
 
+
 on:
   push:
     branches:
       - main
+      - master
   pull_request:
     branches:
       - main
+      - maste
+
 
 jobs:
   build-test-image:
