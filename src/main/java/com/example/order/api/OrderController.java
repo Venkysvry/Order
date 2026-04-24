@@ -32,6 +32,7 @@ public class OrderController {
 		this.orderService = orderService;
 	}
 
+// post order method
 	@PostMapping("/postOrder")
 	public ResponseEntity<OrderResponse> create(@Valid @RequestBody OrderRequest req) {
 
