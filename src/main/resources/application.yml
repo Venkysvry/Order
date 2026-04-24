@@ -1,0 +1,37 @@
+
+server:
+  port: 8081
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Order
+    username: postgres
+    password: Yuvaraj154@
+  jpa:
+    hibernate:
+      ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+  cache:
+    type: redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+resilience4j:
+  retry:
+    instances:
+      inventory:
+        maxAttempts: 3
+        waitDuration: 500ms
